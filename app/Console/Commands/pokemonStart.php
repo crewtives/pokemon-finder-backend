@@ -127,12 +127,13 @@ class pokemonStart extends Command
             $bar->advance();
 
             Artisan::call('key:generate');
+
+            Artisan::call('passport:install');
+
             
             $this->info("");
 
             $this->info("pokemon finder ready. gotta catch them all!");
-
-
 
          }
          catch (\Exception $e){
