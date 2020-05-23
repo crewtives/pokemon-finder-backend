@@ -64,5 +64,33 @@ class AuthController extends Controller
         }
     }
 
+    /**
+	 * Tomar user logueado
+	 *
+     * Servicio para poder tomar datos del usuario logueado
+     * 
+     * @authenticated
+     * 
+     * @response {
+     *  Object
+     * }
+     * 
+	 */
+
+    public function getUser()
+    {
+        try {
+            
+           $user = \Auth::user();
+
+           return response()->json($user, 200);
+
+        } catch (\Throwable $th) {
+
+            return response()->json(['error' => $th->getMessage(), 'line' => $th->getLine()], 500);
+
+        }
+    }
+
 
 }

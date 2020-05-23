@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/authenticate', 'API\AuthController@authenticate');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::group(['middleware' => 'auth:api'], function () {
+
+    Route::get('/getUser', 'API\AuthController@getUser');
+
+    Route::get('/getStartupPokemons', 'API\StartUpPokemonController@getPokemons');
+
 });
