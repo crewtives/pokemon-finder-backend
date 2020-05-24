@@ -19,7 +19,19 @@ Route::post('/authenticate', 'API\AuthController@authenticate');
 
 Route::group(['middleware' => 'auth:api'], function () {
 
+    // Authentication routes
+
     Route::get('/getUser', 'API\AuthController@getUser');
+
+    // Pokemon routes
+    
+    Route::get('/getPokemon', 'API\PokemonController@getPokemon');
+
+    Route::get('/getUserPokemons', 'API\PokemonController@getUserPokemons');
+
+    Route::post('/saveUserPokemon', 'API\PokemonController@saveUserPokemom');
+
+    // Pokemon Startup routes
 
     Route::get('/getStartupPokemons', 'API\StartUpPokemonController@getPokemons');
 
