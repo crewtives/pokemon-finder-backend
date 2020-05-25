@@ -17,6 +17,8 @@ class CreatePokemonUsersTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('pokemon_id');
+            $table->integer('level')->default(1);
+            $table->string('experience')->default(0);
             $table->timestamps();
         });
     }
