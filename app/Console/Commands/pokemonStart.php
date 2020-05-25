@@ -74,6 +74,8 @@ class pokemonStart extends Command
             Artisan::call('env:set db_password '.$dbpassword.'');
             Artisan::call('env:set db_database '.$dbname.'');
 
+            Artisan::call('config:cache');
+
             $this->info("");
 
             $this->info("env variables saved succefully!");
