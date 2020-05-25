@@ -103,10 +103,12 @@ class PokemonController extends Controller
                 if ($pUS->name == 'hp') {
                     $formula = floor((2 * $pUS->base_stat + $pUS->iv_value + $pUS->effort) * $pUS->pokemon->level / 100 + $pUS->pokemon->level + 10);
                     $pUS->stat = $formula;
+                    $pUS->actual_stat = $formula;
                     $pUS->save();
                 } else {
                     $formula = floor(floor((2 * $pUS->base_stat + $pUS->iv_value + $pUS->effort) * $pUS->pokemon->level / 100 + 5) * 1);
                     $pUS->stat = $formula;
+                    $pUS->actual_stat = $formula;
                     $pUS->save();
                 }
             }

@@ -40,6 +40,6 @@ class User extends Authenticatable
 
     public function pokemons()
     {
-        return $this->hasMany('App\PokemonUser', 'user_id', 'id');
+        return $this->hasMany('App\PokemonUser', 'user_id', 'id')->with('stats');
     }
 }

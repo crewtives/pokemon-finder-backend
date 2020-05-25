@@ -63,9 +63,7 @@ class pokemonStart extends Command
                 return $this->ask('world name?', 'pokemonfinder');
             }, ['name','required']);
 
-
             $bar = $this->output->createProgressBar(3);
-
 
             $this->info("");
 

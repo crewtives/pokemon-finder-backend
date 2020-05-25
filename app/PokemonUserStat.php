@@ -8,6 +8,6 @@ class PokemonUserStat extends Model
 {
     public function pokemon()
     {
-        return $this->hasOne('App\PokemonUser', 'id', 'pokemon_user_id');
+        return $this->hasOne('App\PokemonUser', 'id', 'pokemon_user_id')->with('stats');
     }
 }
