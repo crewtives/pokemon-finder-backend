@@ -130,6 +130,8 @@ class pokemonStart extends Command
 
             Artisan::call('passport:install');
 
+            Artisan::call('config:cache');
+
             $this->info("");
 
             $this->info("pokemon finder ready. gotta catch them all!");
