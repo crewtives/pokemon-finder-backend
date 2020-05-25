@@ -13,4 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'API\AuthController@index');
+Route::get('/', function(){
+    return redirect('world');
+});
