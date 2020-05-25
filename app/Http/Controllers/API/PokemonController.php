@@ -112,6 +112,18 @@ class PokemonController extends Controller
             }
 
             $user = \Auth::user();
+            if(!$user->lab_stage){
+                $user->lab_stage = true;
+                $user->save();
+            }
+
+            $pokemons = $user->pokemons;
+
+            foreach($pokemons as $pU){
+                $apiPokemon = json_decode($api->pokemon($pU->pokemon_id));
+                $pU->setAttribute('pokemonApi', $apiPokemon);
+            }
+
 
             return response()->json($user->pokemons, 200);
           
