@@ -29,7 +29,9 @@ class PokemonController extends Controller
      * @bodyParam pokemon_id string parametro para poder identificar el Pokemon
      * 
      * @response {
-     *  Object,
+     *     "0":{},
+     *     "specie": {},
+     *     "stats": []
      * }
      * 
 	 */
@@ -58,6 +60,37 @@ class PokemonController extends Controller
 
         }
     }
+
+    /**
+	 * Guardar pokemon
+	 *
+     * Servicio para poder generar y guardar un pokemon
+     * 
+     * En este servicio se aplican las formulas para poder crear stats aleatorios, con la formula de pokeapi
+     * de esta anera garantizamos que un pokemon no sea igual a otro 
+     * Tambien tiene la regla de individual value para poder agregar descripciones especiales a cada stat
+     * 
+     * formulas:
+     * https://www.dragonflycave.com/mechanics/stats
+     * 
+     * caracterisiticas
+     * https://bulbapedia.bulbagarden.net/wiki/Characteristic
+     * 
+     * @authenticated
+     * 
+     * @bodyParam pokemon_id string parametro para poder identificar el Pokemon
+     * @bodyParam user_id string parametro para poder asignar el pokemon al usuairo
+     * 
+     * @response {
+     *     "user_id": 1,
+     *     "pokemon_id": 1,
+     *     "level": 1,
+     *     "experience": 0,
+     *     "stats": [],
+     *     "pokemonApi": {}
+     * }
+     * 
+	 */
 
     public function saveUserPokemom(Request $request)
     {
@@ -135,6 +168,22 @@ class PokemonController extends Controller
 
         }
     }
+
+    /**
+	 * Tomar pokemons del usuario
+	 *
+     * Servicio para poder traer todos los pokemons de un usuario
+     * 
+     * @authenticated
+     * 
+     * @response {
+     *     "user_id": 1,
+     *     "pokemon_id": 1,
+     *     "level": 1,
+     *     "experience": 0,
+     *     "pokemonApi": {}
+     * }
+	 */
 
     public function getUserPokemons()
     {

@@ -1,0 +1,623 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Laravel API",
+        "_postman_id": "ba4b04b1-2956-4fe5-9c8d-ffa9b93cbca8",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Autenticacion",
+            "description": "\nAPIs para administrar autenticacion",
+            "item": [
+                {
+                    "name": "Autenticar usuario",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/authenticate",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"a\",\n    \"email\": \"sed\",\n    \"password\": \"enim\"\n}"
+                        },
+                        "description": "Servicio para poder autenticar usuarios",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Tomar user logueado",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/getUser",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Servicio para poder tomar datos del usuario logueado",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Pokemons",
+            "description": "\nAPIs para administrar pokemons",
+            "item": [
+                {
+                    "name": "Tomar pokemon",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/getPokemon",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"pokemon_id\": \"culpa\"\n}"
+                        },
+                        "description": "Servicio para poder traer informacion de un pokemon",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Tomar pokemons del usuario",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/getUserPokemons",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Servicio para poder traer todos los pokemons de un usuario",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Guardar pokemon",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/saveUserPokemon",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"pokemon_id\": \"delectus\",\n    \"user_id\": \"cupiditate\"\n}"
+                        },
+                        "description": "Servicio para poder generar y guardar un pokemon\n\nEn este servicio se aplican las formulas para poder crear stats aleatorios, con la formula de pokeapi\nde esta anera garantizamos que un pokemon no sea igual a otro\nTambien tiene la regla de individual value para poder agregar descripciones especiales a cada stat\n\nformulas:\nhttps:\/\/www.dragonflycave.com\/mechanics\/stats\n\ncaracterisiticas\nhttps:\/\/bulbapedia.bulbagarden.net\/wiki\/Characteristic",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Pokemons iniciales",
+            "description": "\nAPIs para administrar pokemons iniciales",
+            "item": [
+                {
+                    "name": "Tomar pokemons iniciales",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api\/getStartupPokemons",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "Servicio para poder traer los pokemones iniciales",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "general",
+            "description": "",
+            "item": [
+                {
+                    "name": "Authorize a client to access the user's account.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/authorize",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Approve the authorization request.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/authorize",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Deny the authorization request.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/authorize",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Authorize a client to access the user's account.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/token",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get all of the authorized tokens for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/tokens",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Delete the given token.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/tokens\/:token_id",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get a fresh transient token cookie for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/token\/refresh",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get all of the clients for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/clients",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Store a new client.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/clients",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Update the given client.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/clients\/:client_id",
+                            "query": []
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Delete the given client.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/clients\/:client_id",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get all of the available scopes for the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/scopes",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Get all of the personal access tokens for the authenticated user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/personal-access-tokens",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Create a new personal access token for the user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/personal-access-tokens",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Delete the given token.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "oauth\/personal-access-tokens\/:token_id",
+                            "query": []
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}

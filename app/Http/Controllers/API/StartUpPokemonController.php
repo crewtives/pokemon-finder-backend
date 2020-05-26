@@ -24,7 +24,7 @@ class StartUpPokemonController extends Controller
      * @authenticated
      * 
      * @response {
-     *  Array,
+     *   "pokemons":[]
      * }
      * 
 	 */

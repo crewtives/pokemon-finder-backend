@@ -25,8 +25,8 @@ class AuthController extends Controller
      * @bodyParam password string required parametro para poder completar la autenticación
      * 
      * @response {
-     *  "token": String,
-     *  "user": Object
+     *  "token": "token",
+     *  "user": {}
      * }
      * 
 	 */
@@ -72,7 +72,7 @@ class AuthController extends Controller
      * @authenticated
      * 
      * @response {
-     *  Object
+     *  "user": {}
      * }
      * 
 	 */
