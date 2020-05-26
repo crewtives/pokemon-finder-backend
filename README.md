@@ -19,3 +19,7 @@
 3. Ready! Install the world [pokemon-finder-frontend](https://github.com/crewtives/pokemon-finder-frontend)
 
 **for manual installation read this [file](https://github.com/crewtives/pokemon-finder-backend/blob/master/app/Console/Commands/pokemonStart.php)**
+
+## tests
+
+**for check test features run** `php artisan test`
